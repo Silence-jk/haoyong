@@ -1,0 +1,63 @@
+{
+  "name": "haoyong",
+  "version": "1.0.1",
+  "description": "some func that frequent be used ",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx jest",
+    "coverage": "npx jest --coverage",
+    "watch": "npx jest --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://git.imweb.io/Silence_JK/adam.git"
+  },
+  "keywords": [
+    "func",
+    "npm",
+    "haoyong"
+  ],
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      ".*\\.(css|less|scss)$": "<rootDir>/__mocks__/styleMock.js"
+    },
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "testEnvironment": "jsdom"
+  },
+  "standard": {
+    "globals": [
+      "expect",
+      "it",
+      "describe",
+      "jest",
+      "XMLHttpRequest"
+    ]
+  },
+  "author": "Silence_JK",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "husky": "^0.15.0-rc.9",
+    "jest": "^22.4.2",
+    "standard": "^11.0.1",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test && npm run coverage",
+      "pre-push": "npm test && npm run coverage"
+    }
+  }
+}
